@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <div *ngIf="isProduct">
+        Toplam {{ total }} adet ürün vardır.
+      </div>
+      <hr>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>
+              Adet
+            </td>
+            <td>
+              Ürün Adı
+            </td>
+            <td>
+
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of cartItemList">
+            <td>
+              {{ cart.quantity }}
+            </td>
+            <td>
+              {{ cart.product.productName }}
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="removeFromCart(cart.product)">Sepetten Çıkar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div *ngFor="let product of products">
+        <button class="btn btn-primary" (click)="productDetail(product)">
+          {{product.productId}} - {{product.productName}}
+        </button>
+        <button class="btn btn-success" (click)="addToCart(product)">Sepete Ekle</button>
+
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
