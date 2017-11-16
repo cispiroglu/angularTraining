@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <hr>
-      <div *ngIf="isProduct">
-        Toplam {{ total }} adet ürün vardır.
+      <div *ngIf="isProduct && total > 0 ">
+        <hr> Toplam {{ total }} adet ürün vardır.
       </div>
       <hr>
       <table class="table table-bordered">
@@ -40,8 +39,10 @@
         <button class="btn btn-primary" (click)="productDetail(product)">
           {{product.productId}} - {{product.productName}}
         </button>
-        <button class="btn btn-success" (click)="addToCart(product)">Sepete Ekle</button>
 
+        <div class="panel" (click)="divClickEvent($event)">
+          <button class="btn btn-success" (click)="addToCart(product, $event)">Sepete Ekle</button>
+        </div>
       </div>
       <hr>
     </div>

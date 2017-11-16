@@ -1,0 +1,19 @@
+.category {
+  border: 1px solid red;
+  border-radius: 2px;
+}
+
+.category-heading {
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.category-body {
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.expanded {
+  background: salmon;
+}

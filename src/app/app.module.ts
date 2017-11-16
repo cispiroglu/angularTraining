@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { RouteConfigs } from './routeConfig';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -28,7 +32,10 @@ import { CartService } from './cart/cart.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(RouteConfigs),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     // for singleton service

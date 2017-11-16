@@ -12,8 +12,13 @@ export class ProductService {
 
   constructor(private http: Http) { }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get('http://northwindapi.azurewebsites.net/api/products')
-    .map(response => response.json());
+  getProducts(productId: number): Observable<Product[]> {
+    if (productId) {
+      return this.http.get('http://northwindapi.azurewebsites.net/api/products/' + productId)
+      .map(response => response.json());
+    } else {
+      return this.http.get('http://northwindapi.azurewebsites.net/api/products')
+      .map(response => response.json());
+    }
   }
 }

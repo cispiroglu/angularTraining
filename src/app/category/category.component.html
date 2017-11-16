@@ -1,3 +1,22 @@
-<p>
-  category works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="category">
+        <div (click)="toggle()" [class.expanded]="isExpanded" class="category-heading">
+          {{ categoryName }}
+          <span class="fa"
+              [ngClass]="{
+                'fa-minus' : isExpanded,
+                'fa-plus' : !isExpanded
+            }">
+            test
+          </span>
+        </div>
+        <div *ngIf="isExpanded" class="category-body">
+          <ng-content></ng-content>
+          Lorem ipsum
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
